@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "mode": "remote",
+  "limits": {"max_requests": 30, "total_seconds": 120, "timeout": 5, "max_bytes": 65536, "rps": 1},
+  "allowed_networks": [],
+  "roles": {
+    "anonymous": {},
+    "employee_a": {"header": "Cookie", "env": "CMS_GUARD_A_COOKIE", "origin": "https://cms.example.invalid"},
+    "employee_b": {"header": "Cookie", "env": "CMS_GUARD_B_COOKIE", "origin": "https://cms.example.invalid"}
+  },
+  "targets": [
+    {
+      "id": "synthetic_document",
+      "url": "https://cms.example.invalid/test-document/known-id",
+      "canary": "REPLACE-WITH-RANDOM-SYNTHETIC-CANARY",
+      "access": {"employee_a": "allow", "employee_b": "deny", "anonymous": "deny"}
+    },
+    {
+      "id": "synthetic_attachment",
+      "url": "https://cms.example.invalid/test-file/known-id",
+      "canary": "REPLACE-WITH-RANDOM-SYNTHETIC-CANARY",
+      "access": {"employee_a": "allow", "employee_b": "deny", "anonymous": "deny"}
+    }
+  ]
+}
