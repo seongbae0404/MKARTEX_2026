@@ -1,0 +1,65 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>CMS Guard Lite · 점검 보고서</title><style>
+:root{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:#17233d;background:#f4f6fa}*{box-sizing:border-box}body{margin:0}main{max-width:1160px;margin:auto;padding:48px 24px}header{display:flex;justify-content:space-between;align-items:start;border-bottom:1px solid #dce1eb;padding-bottom:24px}.eyebrow{color:#3862cf;font-size:12px;font-weight:800;letter-spacing:2px}h1{font-size:36px;margin:12px 0}p{line-height:1.7;color:#5d687d}.version{background:#e7edfc;color:#3459b2;padding:8px 14px;border-radius:20px;font-size:12px}.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:26px 0}.metric{border:1px solid #e1e6ef;border-top:3px solid #91a0ba;border-radius:10px;background:white;padding:18px}.metric span{color:#5d687d;font-size:13px}.metric strong{display:block;font-size:32px;margin-top:8px}.metric.fail{border-top-color:#d74759}.metric.pass{border-top-color:#269579}.metric.error{border-top-color:#c17b24}.toolbar{display:flex;gap:12px;margin:24px 0 14px}input,select{border:1px solid #d7dfed;border-radius:6px;padding:11px;background:white;font:inherit}input{flex:1}table{width:100%;border-collapse:collapse;background:white;border:1px solid #e1e6ef}th{text-align:left;background:#edf1f8;font-size:12px;color:#61708a;padding:13px 18px}td{padding:18px;border-top:1px solid #edf0f5;vertical-align:top;font-size:14px}small{display:block;margin-top:7px;color:#76829a}td:first-child{width:24%}.badge{white-space:nowrap;border-radius:20px;padding:5px 10px;background:#edf0f5;font-size:12px}.badge.pass{background:#e3f5ee;color:#197559}.badge.fail{background:#ffeaec;color:#ae3044}.badge.error{background:#fff0db;color:#9c641c}details{margin-top:12px;color:#687690}summary{cursor:pointer;font-size:12px}pre{white-space:pre-wrap;font-size:12px}aside{margin-top:28px;background:#eaf0fb;padding:18px 24px;border-radius:10px;font-size:13px;line-height:1.8}footer{font-size:12px;color:#7d889c;margin-top:22px}[hidden]{display:none}@media(max-width:700px){main{padding:24px 12px}h1{font-size:27px}.metrics{grid-template-columns:repeat(2,1fr)}td,th{padding:12px 8px}.toolbar{flex-direction:column}}
+</style><main><header><div><div class="eyebrow">CMS GUARD LITE / RESEARCH EDITION</div><h1>직원용 CMS 점검 보고서</h1><p>계정별 접근 결과와 검증 근거를 한곳에서 확인하세요.</p></div><span class="version">v0.1.0</span></header>
+<div class="metrics"><div class="metric pass"><span>기대 충족</span><strong>12</strong></div><div class="metric fail"><span>위반 발견</span><strong>0</strong></div><div class="metric inconclusive"><span>판정 보류</span><strong>0</strong></div><div class="metric error"><span>실행 오류</span><strong>0</strong></div><div class="metric manual"><span>미점검</span><strong>0</strong></div></div><p>HTTP 요청 <b>13</b>회 · 실행 <b>0.247</b>초 · 2026-10-12T08:12:52.430427+00:00</p>
+<div class="toolbar"><input id="search" aria-label="결과 검색" placeholder="대상 또는 판정 내용 검색"><select id="filter" aria-label="상태 필터"><option value="">모든 결과</option><option value="pass">기대 충족</option><option value="fail">위반 발견</option><option value="inconclusive">판정 보류</option><option value="error">실행 오류</option><option value="manual">미점검</option></select></div>
+<table><thead><tr><th>점검 대상 / 역할</th><th>결과</th><th>설명과 근거</th></tr></thead><tbody><tr data-status="pass"><td><b>document</b><small>employee_a</small></td><td><span class="badge pass">기대 충족</span></td><td>허용 계정의 테스트 자료 열람을 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 200,
+  &quot;canary_seen&quot;: true,
+  &quot;truncated&quot;: false,
+  &quot;elapsed_ms&quot;: 1.93
+}</pre></details></td></tr><tr data-status="pass"><td><b>document</b><small>employee_b</small></td><td><span class="badge pass">기대 충족</span></td><td>양성 대조군 성공 후 접근 거부를 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 403,
+  &quot;canary_seen&quot;: false,
+  &quot;truncated&quot;: false,
+  &quot;elapsed_ms&quot;: 1.55
+}</pre></details></td></tr><tr data-status="pass"><td><b>document</b><small>anonymous</small></td><td><span class="badge pass">기대 충족</span></td><td>양성 대조군 성공 후 접근 거부를 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 403,
+  &quot;canary_seen&quot;: false,
+  &quot;truncated&quot;: false,
+  &quot;elapsed_ms&quot;: 1.31
+}</pre></details></td></tr><tr data-status="pass"><td><b>attachment</b><small>employee_a</small></td><td><span class="badge pass">기대 충족</span></td><td>허용 계정의 테스트 자료 열람을 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 200,
+  &quot;canary_seen&quot;: true,
+  &quot;truncated&quot;: false,
+  &quot;elapsed_ms&quot;: 1.57
+}</pre></details></td></tr><tr data-status="pass"><td><b>attachment</b><small>employee_b</small></td><td><span class="badge pass">기대 충족</span></td><td>양성 대조군 성공 후 접근 거부를 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 403,
+  &quot;canary_seen&quot;: false,
+  &quot;truncated&quot;: false,
+  &quot;elapsed_ms&quot;: 1.66
+}</pre></details></td></tr><tr data-status="pass"><td><b>attachment</b><small>anonymous</small></td><td><span class="badge pass">기대 충족</span></td><td>양성 대조군 성공 후 접근 거부를 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 403,
+  &quot;canary_seen&quot;: false,
+  &quot;truncated&quot;: false,
+  &quot;elapsed_ms&quot;: 1.21
+}</pre></details></td></tr><tr data-status="pass"><td><b>admin</b><small>admin</small></td><td><span class="badge pass">기대 충족</span></td><td>허용 계정의 테스트 자료 열람을 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 200,
+  &quot;canary_seen&quot;: true,
+  &quot;truncated&quot;: false,
+  &quot;elapsed_ms&quot;: 1.39
+}</pre></details></td></tr><tr data-status="pass"><td><b>admin</b><small>employee_a</small></td><td><span class="badge pass">기대 충족</span></td><td>양성 대조군 성공 후 접근 거부를 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 403,
+  &quot;canary_seen&quot;: false,
+  &quot;truncated&quot;: false,
+  &quot;elapsed_ms&quot;: 1.26
+}</pre></details></td></tr><tr data-status="pass"><td><b>revoked_session</b><small>employee_a</small></td><td><span class="badge pass">기대 충족</span></td><td>허용 계정의 테스트 자료 열람을 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 200,
+  &quot;canary_seen&quot;: true,
+  &quot;truncated&quot;: false,
+  &quot;elapsed_ms&quot;: 1.69
+}</pre></details></td></tr><tr data-status="pass"><td><b>revoked_session</b><small>revoked</small></td><td><span class="badge pass">기대 충족</span></td><td>양성 대조군 성공 후 접근 거부를 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 403,
+  &quot;canary_seen&quot;: false,
+  &quot;truncated&quot;: false,
+  &quot;elapsed_ms&quot;: 1.39
+}</pre></details></td></tr><tr data-status="pass"><td><b>upload</b><small>lab</small></td><td><span class="badge pass">기대 충족</span></td><td>로컬 실험의 정상 파일 수락·금지 형식 거부를 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;control_status&quot;: 201,
+  &quot;probe_status&quot;: 415
+}</pre></details></td></tr><tr data-status="pass"><td><b>render</b><small>lab</small></td><td><span class="badge pass">기대 충족</span></td><td>로컬 HTML 텍스트 문맥의 이스케이프를 확인했습니다.<details><summary>판정 근거</summary><pre>{
+  &quot;http_status&quot;: 200
+}</pre></details></td></tr></tbody></table><aside><b>보고서 읽는 법</b><ul><li>지정된 사례만 평가합니다. 전체 서비스의 안전을 보장하지 않습니다.</li><li>SSO/MFA 로그인과 계정 무효화는 운영자가 준비합니다.</li><li>설정 스냅샷은 제공된 주장에 대한 검토이며 실제 서버 동작의 증명이 아닙니다.</li></ul>‘기대 충족’은 이 사례의 결과입니다. 설정 검토는 실제 동작 검증과 구분됩니다.</aside><footer>원문 · 인증 값 · 실제 URL은 보고서에 포함하지 않습니다. 별칭에도 기밀 정보를 넣지 마세요.</footer></main><script>
+const q=document.querySelector('#search'),f=document.querySelector('#filter');function apply(){for(const row of document.querySelectorAll('tbody tr'))row.hidden=Boolean((f.value&&row.dataset.status!==f.value)||!row.textContent.toLowerCase().includes(q.value.toLowerCase()));}q.addEventListener('input',apply);f.addEventListener('change',apply);
+</script></html>
