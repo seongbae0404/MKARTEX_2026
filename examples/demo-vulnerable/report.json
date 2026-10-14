@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "tool_version": "0.1.0",
+  "created_at": "2026-10-12T08:12:54.047821+00:00",
+  "mode": "lab",
+  "results": [
+    {
+      "target": "document",
+      "role": "employee_a",
+      "status": "pass",
+      "reason": "허용 계정의 테스트 자료 열람을 확인했습니다.",
+      "evidence": {
+        "http_status": 200,
+        "canary_seen": true,
+        "truncated": false,
+        "elapsed_ms": 2.0
+      }
+    },
+    {
+      "target": "document",
+      "role": "employee_b",
+      "status": "fail",
+      "reason": "접근 불가 계정에 테스트 자료 표식이 반환됐습니다.",
+      "evidence": {
+        "http_status": 200,
+        "canary_seen": true,
+        "truncated": false,
+        "elapsed_ms": 1.46
+      }
+    },
+    {
+      "target": "document",
+      "role": "anonymous",
+      "status": "fail",
+      "reason": "접근 불가 계정에 테스트 자료 표식이 반환됐습니다.",
+      "evidence": {
+        "http_status": 200,
+        "canary_seen": true,
+        "truncated": false,
+        "elapsed_ms": 1.95
+      }
+    },
+    {
+      "target": "attachment",
+      "role": "employee_a",
+      "status": "pass",
+      "reason": "허용 계정의 테스트 자료 열람을 확인했습니다.",
+      "evidence": {
+        "http_status": 200,
+        "canary_seen": true,
+        "truncated": false,
+        "elapsed_ms": 1.63
+      }
+    },
+    {
+      "target": "attachment",
+      "role": "employee_b",
+      "status": "fail",
+      "reason": "접근 불가 계정에 테스트 자료 표식이 반환됐습니다.",
+      "evidence": {
+        "http_status": 200,
+        "canary_seen": true,
+        "truncated": false,
+        "elapsed_ms": 1.47
+      }
+    },
+    {
+      "target": "attachment",
+      "role": "anonymous",
+      "status": "fail",
+      "reason": "접근 불가 계정에 테스트 자료 표식이 반환됐습니다.",
+      "evidence": {
+        "http_status": 200,
+        "canary_seen": true,
+        "truncated": false,
+        "elapsed_ms": 1.31
+      }
+    },
+    {
+      "target": "admin",
+      "role": "admin",
+      "status": "pass",
+      "reason": "허용 계정의 테스트 자료 열람을 확인했습니다.",
+      "evidence": {
+        "http_status": 200,
+        "canary_seen": true,
+        "truncated": false,
+        "elapsed_ms": 1.39
+      }
+    },
+    {
+      "target": "admin",
+      "role": "employee_a",
+      "status": "fail",
+      "reason": "접근 불가 계정에 테스트 자료 표식이 반환됐습니다.",
+      "evidence": {
+        "http_status": 200,
+        "canary_seen": true,
+        "truncated": false,
+        "elapsed_ms": 1.33
+      }
+    },
+    {
+      "target": "revoked_session",
+      "role": "employee_a",
+      "status": "pass",
+      "reason": "허용 계정의 테스트 자료 열람을 확인했습니다.",
+      "evidence": {
+        "http_status": 200,
+        "canary_seen": true,
+        "truncated": false,
+        "elapsed_ms": 1.3
+      }
+    },
+    {
+      "target": "revoked_session",
+      "role": "revoked",
+      "status": "fail",
+      "reason": "접근 불가 계정에 테스트 자료 표식이 반환됐습니다.",
+      "evidence": {
+        "http_status": 200,
+        "canary_seen": true,
+        "truncated": false,
+        "elapsed_ms": 1.21
+      }
+    },
+    {
+      "target": "upload",
+      "role": "lab",
+      "status": "fail",
+      "reason": "로컬 실험에서 허용하지 않은 파일 형식을 수락했습니다.",
+      "evidence": {
+        "control_status": 201,
+        "probe_status": 201
+      }
+    },
+    {
+      "target": "render",
+      "role": "lab",
+      "status": "fail",
+      "reason": "로컬 HTML 문맥에서 무해한 태그가 이스케이프 없이 반환됐습니다.",
+      "evidence": {
+        "http_status": 200
+      }
+    }
+  ],
+  "summary": {
+    "pass": 4,
+    "fail": 8,
+    "inconclusive": 0,
+    "error": 0,
+    "manual": 0
+  },
+  "metrics": {
+    "requests": 13,
+    "duration_seconds": 0.247,
+    "llm_calls": 0
+  },
+  "limitations": [
+    "지정된 사례만 평가합니다. 전체 서비스의 안전을 보장하지 않습니다.",
+    "SSO/MFA 로그인과 계정 무효화는 운영자가 준비합니다.",
+    "설정 스냅샷은 제공된 주장에 대한 검토이며 실제 서버 동작의 증명이 아닙니다."
+  ]
+}
