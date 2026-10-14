@@ -1,0 +1,6 @@
+{
+  "db": {"tls_required": null, "public_access_blocked": null, "least_privilege": null, "backups_encrypted": null},
+  "sso": {"mfa_enabled": null, "redirect_uris_exact": null, "pkce_s256_enforced": null, "revocation_tested": null},
+  "uploads": {"extension_allowlist": null, "signature_validation": null, "size_limit": null, "outside_webroot": null, "download_authz": null},
+  "content": {"contextual_encoding": null, "sanitization": null}
+}
